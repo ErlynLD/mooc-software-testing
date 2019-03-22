@@ -11,14 +11,17 @@ public class CaesarShiftCipher {
 
         for(int i = 0; i < length; i++){
             currentChar = message.charAt(i);
-           
-            sb.append(currentChar);
+
+            //Here is the bug
+            //sb.append(currentChar);
             if (currentChar > 'z' || currentChar < 'a') {
                 return "invalid";
             } else if ((char) (currentChar + shift) > 'z') {
                 currentChar = (char) (currentChar - 26);
+                System.out.println(currentChar + ", curr + shift = " + ((char) currentChar - 26));
             } else if ((char) (currentChar + shift) < 'a'){
                 currentChar = (char) (currentChar + 26);
+                System.out.println(currentChar + ", curr + shift = " + ((char) currentChar + 26));
             }
             sb.append((char) (currentChar + shift));
         }
