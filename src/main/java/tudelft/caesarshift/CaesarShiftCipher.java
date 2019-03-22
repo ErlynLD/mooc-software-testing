@@ -14,6 +14,13 @@ public class CaesarShiftCipher {
 
             //Here is the bug
             //sb.append(currentChar);
+
+            //For keeping spaces
+            if (currentChar == ' '){
+                sb.append(currentChar);
+                continue;
+            }
+
             if (currentChar > 'z' || currentChar < 'a') {
                 return "invalid";
             } else if ((char) (currentChar + shift) > 'z') {

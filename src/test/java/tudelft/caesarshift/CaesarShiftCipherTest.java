@@ -29,4 +29,12 @@ public class CaesarShiftCipherTest {
         String result = caesarShiftCipher.CaesarShiftCipher(str, shift);
         Assertions.assertEquals(expected, result);
     }
+
+    @ParameterizedTest
+    @CsvSource({"a b, 3, d e", "hello world, 5, mjqqt btwqi"})
+    public void inputWithSpacesToChipher(String str, int shift, String expected){
+        CaesarShiftCipher caesarShiftCipher = new CaesarShiftCipher();
+        String result = caesarShiftCipher.CaesarShiftCipher(str, shift);
+        Assertions.assertEquals(expected, result);
+    }
 }
