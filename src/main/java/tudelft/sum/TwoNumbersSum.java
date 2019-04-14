@@ -25,6 +25,10 @@ class TwoNumbersSum {
             result.add(i, total);
         }
 
+        //Here was the solution. Add this functionality for cases when result has longer size than the max addend.
+        if (complement > 0)
+            result.add(complement);
+
         Collections.reverse(result);
         return result;
     }
